@@ -5,7 +5,7 @@
 #include "./header.h"
 
 
-int	back_book(int a)
+int	back_book(char a[100])
 {
 	MYSQL *conn;
 	/*char *Titre = argv[0];
@@ -18,7 +18,7 @@ int	back_book(int a)
 	strcat(sql1, sql3);
 	char sql4[100] = "idEmprunt = ";
 	strcat(sql1, sql4);
-	char sql5[100] = a;
+	char *sql5 = a;
 	strcat(sql1, sql5);
 
 	if ((conn = mysql_init(NULL)) == NULL)

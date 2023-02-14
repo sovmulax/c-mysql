@@ -11,11 +11,11 @@ int	add_book(char a[200], char b[200])
 	char *Auteur = argv[1];*/
 
 	char sql1[100] = "INSERT INTO livres(Titre, Auteur) VALUES(";
-	char sql2[] = a;
+	char *sql2 = a;
 	strcat(sql1, sql2);
 	char sql3[100] = ",";
 	strcat(sql1, sql3);
-	char sql4[100] = b;
+	char *sql4 = b;
 	strcat(sql1, sql4);
 	char sql5[100] = ")";
 	strcat(sql1, sql5);

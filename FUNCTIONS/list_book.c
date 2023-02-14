@@ -28,8 +28,6 @@ int	list_book()
 		return (EXIT_FAILURE);
 	}
 
-	printf("%s", sql1);
-
 	if (mysql_query(conn, "SELECT * FROM livres"))
 	{
 		finish_with_error(conn);
