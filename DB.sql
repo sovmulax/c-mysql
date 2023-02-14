@@ -63,18 +63,9 @@ CREATE TABLE IF NOT EXISTS `emprunt` (
   PRIMARY KEY (`idEmprunt`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `emprunt`
---
-
 INSERT INTO `emprunt` (`idEmprunt`, `date_emprunt`, `retourné`, `idAdht`, `idLivre`) VALUES
 (1, '2023-02-01', 0, 1, 3);
 
--- --------------------------------------------------------
-
---
--- Structure de la table `livres`
---
 
 DROP TABLE IF EXISTS `livres`;
 CREATE TABLE IF NOT EXISTS `livres` (
@@ -85,15 +76,12 @@ CREATE TABLE IF NOT EXISTS `livres` (
   UNIQUE KEY `idLivre` (`idLivre`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `livres`
---
 
 INSERT INTO `livres` (`idLivre`, `Titre`, `Auteur`) VALUES
 (1, 'mamadou et bineta', 'sengor'),
 (2, 'et pourtant elle pleurait', 'esai biton'),
 (3, 'la jare persé', 'Coulibaly mariame'),
-(4, 'l\'etranger', 'Albert camus');
+(4, 'letranger', 'Albert camus');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

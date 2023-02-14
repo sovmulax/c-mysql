@@ -6,7 +6,7 @@ utilisez mysql et faire des librairies
 
 Librairie dynamique (MYSQL) :
 
-- [ ]  CREATE
+- [x]  CREATE
 - [ ]  READ
 - [ ]  EDIT
 - [ ]  DELETE
