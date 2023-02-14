@@ -30,38 +30,24 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `adherent`;
 CREATE TABLE IF NOT EXISTS `adherent` (
-  `idAdht` int(11) NOT NULL,
+  `idAdht` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nom` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
-  `statut` varchar(100) NOT NULL,
-  PRIMARY KEY (`idAdht`),
-  UNIQUE KEY `idAdht` (`idAdht`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `adherent`
---
+  `statut` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `adherent` (`idAdht`, `nom`, `prenom`, `statut`) VALUES
 (1, 'OKA', 'Mira ', 'nouvelleAderent'),
 (2, 'somaila', 'geoffroy', 'AdherehtCertifié'),
 (3, 'doudou', 'nelly', 'AdherehtCertifié');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `emprunt`
---
-
 DROP TABLE IF EXISTS `emprunt`;
 CREATE TABLE IF NOT EXISTS `emprunt` (
-  `idEmprunt` int(10) UNSIGNED NOT NULL,
-  `date_emprunt` date NOT NULL,
+  `idEmprunt` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `retourné` tinyint(1) NOT NULL,
-  `idAdht` int(11) NOT NULL,
-  `idLivre` int(11) NOT NULL,
-  PRIMARY KEY (`idEmprunt`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `idAdht` varchar(100) NOT NULL,
+  `idLivre` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `emprunt` (`idEmprunt`, `date_emprunt`, `retourné`, `idAdht`, `idLivre`) VALUES
 (1, '2023-02-01', 0, 1, 3);
@@ -69,12 +55,10 @@ INSERT INTO `emprunt` (`idEmprunt`, `date_emprunt`, `retourné`, `idAdht`, `idLi
 
 DROP TABLE IF EXISTS `livres`;
 CREATE TABLE IF NOT EXISTS `livres` (
-  `idLivre` int(11) NOT NULL,
+  `idLivre` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `Titre` varchar(100) NOT NULL,
-  `Auteur` varchar(100) NOT NULL,
-  PRIMARY KEY (`idLivre`),
-  UNIQUE KEY `idLivre` (`idLivre`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Auteur` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 INSERT INTO `livres` (`idLivre`, `Titre`, `Auteur`) VALUES
