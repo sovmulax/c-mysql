@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "./header.h"
 
 void finish_with_error(MYSQL *conn)
 {
@@ -10,7 +11,7 @@ void finish_with_error(MYSQL *conn)
   exit(1);
 }
 
-int	main(int argc, char *argv[])
+int	list_users()
 {
 	MYSQL *conn;
 

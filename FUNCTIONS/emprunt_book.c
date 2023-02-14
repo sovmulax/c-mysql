@@ -2,21 +2,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "./header.h"
 
-int	main(int argc, char *argv[])
-{
+
+int	emprunt_book(char a[200], char b[200]){
 	MYSQL *conn;
 	/*char *Titre = argv[0];
 	char *Auteur = argv[1];*/
 
-	char sql1[100] = "INSERT INTO emprunt(idAdht, idLivre, retourné) VALUES(";
-	char sql2[] = "'Geoffroy'";
+	char sql1[100] = "INSERT INTO emprunt(idAdht, idLivre, retourné) VALUES('";
+	char sql2[] = a;
 	strcat(sql1, sql2);
-	char sql3[100] = ",";
+	char sql3[100] = "','";
 	strcat(sql1, sql3);
-	char sql4[100] = "'les tulipes', '0'";
+	char sql4[100] = b;
 	strcat(sql1, sql4);
-	char sql5[100] = ")";
+	char sql5[100] = "', '0')";
 	strcat(sql1, sql5);
 
 	if ((conn = mysql_init(NULL)) == NULL)

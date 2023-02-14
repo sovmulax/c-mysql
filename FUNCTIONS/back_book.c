@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "./header.h"
 
-int	main(int argc, char *argv[])
+
+int	back_book(int a)
 {
 	MYSQL *conn;
 	/*char *Titre = argv[0];
@@ -16,7 +18,7 @@ int	main(int argc, char *argv[])
 	strcat(sql1, sql3);
 	char sql4[100] = "idEmprunt = ";
 	strcat(sql1, sql4);
-	char sql5[100] = "2";
+	char sql5[100] = a;
 	strcat(sql1, sql5);
 
 	if ((conn = mysql_init(NULL)) == NULL)
