@@ -27,7 +27,7 @@ int	back_book(char a[100])
 		return (EXIT_FAILURE);
 	}
 
-	if (mysql_real_connect(conn, "localhost", "root", "2001ageo",
+	if (mysql_real_connect(conn, "localhost", "root", "root",
 			"bibliotheque", 0, NULL, 0) == NULL)
 	{
 		fprintf(stderr, "DB Connection Error\n");

@@ -1,4 +1,4 @@
-#include </usr/local/mysql/include/mysql.h>
+#include <mysql.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -26,7 +26,7 @@ int	add_book(char a[200], char b[200])
 		return (EXIT_FAILURE);
 	}
 
-	if (mysql_real_connect(conn, "localhost", "root", "2001ageo",
+	if (mysql_real_connect(conn, "localhost", "root", "root",
 			"bibliotheque", 0, NULL, 0) == NULL)
 	{
 		fprintf(stderr, "DB Connection Error\n");
