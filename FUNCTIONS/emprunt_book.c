@@ -1,8 +1,8 @@
-#include </usr/local/mysql/include/mysql.h>
+#include "sqlite3.h"
+#include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "./header.h"
 
 
 int	emprunt_book(char a[200], char b[200]){

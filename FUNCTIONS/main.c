@@ -1,44 +1,82 @@
-#include "./FUNCTIONS/header.h"
-#include </usr/local/mysql/include/mysql.h>
+#include "sqlite3.h"
+#include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	int choix;
-	char nom[100];
+	char choix[100];
+	char ident[100];
 	char livre[100];
-	char auteur[100];
-	char id[100];
-	printf("Menu : \n");
-	printf("1 - Liste de livre : \n");
-	printf("2 - Liste des adhérents : \n");
-	printf("3 - Ajout de livre : \n");
-	printf("4 - Emprunt de livre : \n");
-	printf("5 - Retour de livre : \n");
+	char hour[100];
+	int boo = 1;
 
-	switch (choix)
+	while (boo == 1)
 	{
-	case 1:
-		list_book();
-		break ;
-	case 2:
-		list_users();
-		break ;
-	case 3:
-        scanf("Livre %s", livre);
-        scanf("Auteur %s", auteur);
-		add_book(livre, auteur);
-		break ;
-	case 4:
-        scanf("nom %s", nom);
-        scanf("Livre %s", livre);
-		emprunt_book(nom, livre);
-		break ;
-	case 5:
-        scanf("id du retour %s", id);
-		back_book(id);
-		break ;
+		printf("🔢 Menu : \n");
+		printf("1️⃣ - Ajout d'adherent : \n");
+		printf("2️⃣ - Liste des adherents : \n");
+		printf("3️⃣ - Ajout de livre : \n");
+		printf("4️⃣ - Liste des livres : \n");
+		printf("5️⃣ - Emprunter un livre : \n");
+		printf("6️⃣ - Retourner un livre : \n");
+		printf("7️⃣ - Les emprunts en cour: \n");
+		printf("➡️ ");
+		scanf("%s", choix);
+
+		switch (atoi(choix))
+		{
+		case 1:
+			printf("Le nom de l'adhérent\n");
+			printf("➡️ ");
+			scanf("%s", livre);
+
+			break ;
+		case 2:
+
+			break ;
+		
+		case 3:
+			printf("L'intitulé du \n");
+			printf("➡️ ");
+			scanf("%s", livre);
+			printf("Le nom de l'auteur\n");
+			printf("➡️ ");
+			scanf("%s", livre);
+			break ;
+
+		case 4:
+			printf("Le nom de l'adhérent\n");
+			printf("➡️ ");
+			scanf("%s", livre);
+			break ;
+
+		case 5:
+			printf("Le nom de l'adhérent\n");
+			printf("➡️ ");
+			scanf("%s", livre);
+			break ;
+
+		case 6:
+			printf("Le nom de l'adhérent\n");
+			printf("➡️ ");
+			scanf("%s", livre);
+			break ;
+
+		case 7:
+			printf("Le nom de l'adhérent\n");
+			printf("➡️ ");
+			scanf("%s", livre);
+			break ;
+		}
+
+		printf(" ⚠️ Voulez-vous continuer ? (0 ou 1) \n");
+		printf("➡️ ");
+		scanf("%d", &boo);
+
+		if(boo == 0){
+			return 0;
+		}
 	}
+	return (0);
 }
