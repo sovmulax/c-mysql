@@ -1,0 +1,5 @@
+-- SQLite
+
+CREATE TABLE adherents(Id INTEGER PRIMARY KEY, nom TEXT, prenom TEXT);
+CREATE TABLE emprunt(Id INTEGER PRIMARY KEY, adherent TEXT, livre TEXT);
+CREATE TABLE livres(Id INTEGER PRIMARY KEY, titre TEXT, auteur TEXT);
