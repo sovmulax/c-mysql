@@ -8,7 +8,7 @@ int	main(int argc, char *argv[])
 	char choix[100];
 	char ident[100];
 	char livre[100];
-	char hour[100];
+	char auteur[100];
 	int boo = 1;
 
 	while (boo == 1)
@@ -18,8 +18,8 @@ int	main(int argc, char *argv[])
 		printf("2️⃣ - Liste des adherents : \n");
 		printf("3️⃣ - Ajout de livre : \n");
 		printf("4️⃣ - Liste des livres : \n");
-		printf("5️⃣ - Emprunter un livre : \n");
-		printf("6️⃣ - Retourner un livre : \n");
+		printf("5️⃣ - Emprunté un livre : \n");
+		printf("6️⃣ - Retourné un livre : \n");
 		printf("7️⃣ - Les emprunts en cour: \n");
 		printf("➡️ ");
 		scanf("%s", choix);
@@ -42,7 +42,8 @@ int	main(int argc, char *argv[])
 			scanf("%s", livre);
 			printf("Le nom de l'auteur\n");
 			printf("➡️ ");
-			scanf("%s", livre);
+			scanf("%s", auteur);
+			ajout_livre(livre, auteur);
 			break ;
 
 		case 4:

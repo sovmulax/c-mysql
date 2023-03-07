@@ -10,10 +10,10 @@ SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(BIN_DIR)/%.o,$(SRC_FILES))
 
 # The default target, which will build the executable
-all: $(BIN_DIR)/myprogram run
+all: $(BIN_DIR)/bibliotheque run
 
 # Link the object files and libraries to create the executable
-$(BIN_DIR)/myprogram: $(OBJ_FILES) $(LIB_DIR)/libparking.a
+$(BIN_DIR)/bibliotheque: $(OBJ_FILES) $(LIB_DIR)/libotheque.a
 	$(CC) -o $@ $^ -lsqlite3
 
 # Compile each source file into an object file
@@ -21,16 +21,16 @@ $(BIN_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) -c -o $@ $<
 
 # Create the static library
-$(LIB_DIR)/libparking.a: $(BIN_DIR)/place.o $(BIN_DIR)/factures.o
+$(LIB_DIR)/libotheque.a: $(BIN_DIR)/ajout_livre.o 
 	ar rcs $@ $^
 
-# Compile the place.c file into an object file
-$(BIN_DIR)/place.o: $(SRC_DIR)/place.c
+# Compile the ajout_livre.c file into an object file
+$(BIN_DIR)/ajout_livre.o: $(SRC_DIR)/ajout_livre.c
 	$(CC) -c -o $@ $<
 
-# Compile the facturesy.c file into an object file
-$(BIN_DIR)/factures.o: $(SRC_DIR)/factures.c
-	$(CC) -c -o $@ $<
+# # Compile the facturesy.c file into an object file
+# $(BIN_DIR)/factures.o: $(SRC_DIR)/factures.c
+# 	$(CC) -c -o $@ $<
 
 # Clean the generated files
 clean:
@@ -38,4 +38,4 @@ clean:
 
 # Run the program
 run:
-	$(BIN_DIR)/myprogram
+	$(BIN_DIR)/bibliotheque
