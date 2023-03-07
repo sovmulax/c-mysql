@@ -21,7 +21,7 @@ $(BIN_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) -c -o $@ $<
 
 # Create the static library
-$(LIB_DIR)/libotheque.a:  $(BIN_DIR)/ajout_livre.o $(BIN_DIR)/ajout_user.o $(BIN_DIR)/emprunts.o 
+$(LIB_DIR)/libotheque.a:  $(BIN_DIR)/ajout_livre.o $(BIN_DIR)/ajout_user.o $(BIN_DIR)/emprunts.o $(BIN_DIR)/list_adh.o $(BIN_DIR)/list_livres.o $(BIN_DIR)/list_emprunt.o 
 	ar rcs $@ $^
 
 # Clean the generated files

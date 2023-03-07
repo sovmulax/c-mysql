@@ -66,9 +66,11 @@ int	main(int argc, char *argv[])
 			break ;
 
 		case 6:
-			printf("Le nom de l'adhérent\n");
+			list_emprunt();
+			printf("L'Id de l'emprunt'\n");
 			printf("➡️ ");
 			scanf("%s", livre);
+			retour(atoi(livre));
 			break ;
 
 		case 7:
