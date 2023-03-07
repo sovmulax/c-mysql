@@ -58,9 +58,13 @@ int	main(int argc, char *argv[])
 			break ;
 
 		case 5:
-			printf("Le nom de l'adhérent\n");
+			printf("Le nom de l'utilisateur \n");
 			printf("➡️ ");
-			scanf("%s", livre);
+			scanf("%s", nom);
+			printf("L'intitulé du livre\n");
+			printf("➡️ ");
+			scanf("%s", auteur);
+			emprunts(nom, auteur);
 			break ;
 
 		case 6:

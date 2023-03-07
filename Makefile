@@ -21,16 +21,8 @@ $(BIN_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) -c -o $@ $<
 
 # Create the static library
-$(LIB_DIR)/libotheque.a: $(BIN_DIR)/ajout_livre.o 
+$(LIB_DIR)/libotheque.a:  $(BIN_DIR)/ajout_livre.o $(BIN_DIR)/ajout_user.o $(BIN_DIR)/emprunts.o 
 	ar rcs $@ $^
-
-# Compile the ajout_livre.c file into an object file
-$(BIN_DIR)/ajout_livre.o: $(SRC_DIR)/ajout_livre.c
-	$(CC) -c -o $@ $<
-
-# # Compile the facturesy.c file into an object file
-# $(BIN_DIR)/factures.o: $(SRC_DIR)/factures.c
-# 	$(CC) -c -o $@ $<
 
 # Clean the generated files
 clean:
