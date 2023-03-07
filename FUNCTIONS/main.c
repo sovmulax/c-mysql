@@ -6,7 +6,8 @@
 int	main(int argc, char *argv[])
 {
 	char choix[100];
-	char ident[100];
+	char nom[100];
+	char prenom[100];
 	char livre[100];
 	char auteur[100];
 	int boo = 1;
@@ -29,8 +30,12 @@ int	main(int argc, char *argv[])
 		case 1:
 			printf("Le nom de l'adhérent\n");
 			printf("➡️ ");
-			scanf("%s", livre);
+			scanf("%s", nom);
+			printf("Le prenom de l'adhérent\n");
+			printf("➡️ ");
+			scanf("%s", prenom);
 
+			ajout_user(nom, prenom);
 			break ;
 		case 2:
 
