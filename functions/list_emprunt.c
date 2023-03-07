@@ -4,7 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-int	emprunts(char a[200], char b[200])
+int	callbacks_emprunt(void *, int, char **, char **);
+
+int	list_emprunt()
 {
 	sqlite3	*db;
 	char	*err_msg;
@@ -17,9 +19,9 @@ int	emprunts(char a[200], char b[200])
 
 	err_msg = 0;
 	//requete
-	sz = snprintf(NULL, 0, "INSERT INTO emprunt(adherent, livre) VALUES('%s', '%s')", a, b);
+	sz = snprintf(NULL, 0, "SELECT * FROM emprunt");
 	sql = (char *)malloc(sz + 1);
-	snprintf(sql, sz + 1, "INSERT INTO emprunt(adherent, livre) VALUES('%s', '%s')", a, b);
+	snprintf(sql, sz + 1, "SELECT * FROM emprunt");
 	
 	//work
 	rc = sqlite3_open("./bible.db", &db);
@@ -29,10 +31,9 @@ int	emprunts(char a[200], char b[200])
 		sqlite3_close(db);
 		return (1);
 	}
-
 	printf("✅ %s\n", sql);
 
-	rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
+	rc = sqlite3_exec(db, sql, callbacks_emprunt, 0, &err_msg);
 	if (rc != SQLITE_OK)
 	{
 		fprintf(stderr, "SQL error: %s\n", err_msg);
@@ -43,5 +44,19 @@ int	emprunts(char a[200], char b[200])
 
 	sqlite3_close(db);
 		
+	return (0);
+}
+
+int	callbacks_emprunt(void *NotUsed, int argc, char **argv, char **azColName)
+{
+	NotUsed = 0;
+
+	for (int i = 0; i < argc; i++)
+	{
+		printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+	}
+
+	printf("🗃️\n");
+
 	return (0);
 }

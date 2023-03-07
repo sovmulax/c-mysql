@@ -38,7 +38,7 @@ int	main(int argc, char *argv[])
 			ajout_user(nom, prenom);
 			break ;
 		case 2:
-
+			list_adh();
 			break ;
 		
 		case 3:
@@ -52,9 +52,7 @@ int	main(int argc, char *argv[])
 			break ;
 
 		case 4:
-			printf("Le nom de l'adhérent\n");
-			printf("➡️ ");
-			scanf("%s", livre);
+			list_lives();
 			break ;
 
 		case 5:
@@ -74,9 +72,7 @@ int	main(int argc, char *argv[])
 			break ;
 
 		case 7:
-			printf("Le nom de l'adhérent\n");
-			printf("➡️ ");
-			scanf("%s", livre);
+			list_emprunt();
 			break ;
 		}
 
